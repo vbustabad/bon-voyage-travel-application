@@ -4,7 +4,7 @@ class RequestsController < ApplicationController
     erb :'/requests/create_request'
   end
 
-  post '/request' do
+  post '/requests' do
     @request = Request.create(content: params[:content], user_id: @user.id)
 
     redirect to("/requests/#{@request.slug}")
